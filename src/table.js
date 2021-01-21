@@ -9,6 +9,9 @@ function Table(props) {
         height: "120px",
         width:"120px"
     }
+    const handleRemove = (id)=>{
+        dispatch(deletePhotos(id))
+    }
     return (
         <div>
             <table>
@@ -25,9 +28,7 @@ function Table(props) {
                                 <tr key={i}>
                                     <td>{ele.id}</td>
                                     <td><img src={ele.url} alt='' style={imgStyle} /></td>
-                                    <td><button onClick={() => {
-                                        
-                                    }}>delete</button></td>
+                                    <td><button onClick={()=>handleRemove(ele.id)}>delete</button></td>
                                 </tr>
                             )
                         })
