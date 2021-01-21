@@ -1,0 +1,13 @@
+.pagination{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 10%;
+    padding-left: 0;
+}
+.page-item{
+    list-style: none;
+    display: inline-block;
+    height: 120px;
+    text-align: center;
+}
