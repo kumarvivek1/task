@@ -14,7 +14,7 @@ function Pagination(props) {
     })
 
     const length = useSelector((state) => state.length)
-    const noOfPage=Math.ceil(length/postPerPage)
+    const noOfPage=Math.ceil(length/(postPerPage*postPerPage))
     
     const lastIndex = pageCount * postPerPage
     const firstIndex = lastIndex - postPerPage + 1
@@ -33,6 +33,9 @@ function Pagination(props) {
     return (
         <div>
             <ul className='pagination'>
+                <li className="page-item"><a href="#" className="page-link"
+                    onClick={() => { setPageCount(1)}}
+                >first page</a></li>
                 <li className="page-item"><a href="#" className="page-link"
                     onClick={() => {
                         if (pageCount > 1) {
@@ -55,6 +58,9 @@ function Pagination(props) {
                         }
                     }}
                 >next</a></li>
+                <li className="page-item"><a href="#" className="page-link"
+                    onClick={() => { setPageCount(noOfPage)}}
+                >Last page</a></li>
             </ul> 
         </div>
     )
