@@ -18,7 +18,9 @@ function Table(props) {
                 <thead>
                     <tr>
                         <th>id</th>
+                        <th>title</th>
                         <th>image</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +29,7 @@ function Table(props) {
                             return (
                                 <tr key={i}>
                                     <td>{ele.id}</td>
+                                    <td>{ele.title}</td>
                                     <td><img src={ele.url} alt='' style={imgStyle} /></td>
                                     <td><button onClick={()=>handleRemove(ele.id)}>delete</button></td>
                                 </tr>
