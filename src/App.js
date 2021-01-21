@@ -1,12 +1,11 @@
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import React,{useEffect} from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import React from 'react'
 import TableContainer from './tableContainer';
 
 function App() {
-  
   return (
-    <div className="app">
+    <div className="container">
       <TableContainer/>
     </div>
   );

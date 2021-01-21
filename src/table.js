@@ -2,24 +2,28 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {deletePhotos} from './redux-store/actions/delete.action'
 
-function Table(props) {
+function Table() {
     const data = useSelector((state) => state.photos)
     const dispatch=useDispatch()
     const imgStyle = {
-        height: "120px",
-        width:"120px"
+        height: "100px",
+        width:"100px"
     }
-    const handleRemove = (id)=>{
-        dispatch(deletePhotos(id))
+    const handleRemove = (id) => {
+        const agree = window.confirm("are you sure")
+        if (agree) {
+            dispatch(deletePhotos(id))
+        }  
     }
     return (
         <div>
-            <table>
+            <table className="table table-hover">
                 <thead>
-                    <tr>
+                    <tr >
                         <th>id</th>
                         <th>title</th>
                         <th>image</th>
+                        <th>action</th>
                         
                     </tr>
                 </thead>
@@ -31,7 +35,7 @@ function Table(props) {
                                     <td>{ele.id}</td>
                                     <td>{ele.title}</td>
                                     <td><img src={ele.url} alt='' style={imgStyle} /></td>
-                                    <td><button onClick={()=>handleRemove(ele.id)}>delete</button></td>
+                                    <td><button className="btn btn-danger" onClick={()=>handleRemove(ele.id)}>delete</button></td>
                                 </tr>
                             )
                         })
