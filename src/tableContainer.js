@@ -22,7 +22,7 @@ const  TableContainer = () => {
     return (
         <div>
             <Table/>
-            <Pagination postPerPage={postPerPage} handlePage={handlePage}/>
+            <Pagination handlePage={handlePage}/>
         </div>
     )
 }

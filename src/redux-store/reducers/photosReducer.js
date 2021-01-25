@@ -10,6 +10,15 @@ const photosReducer = (state=initialValue,action) => {
                 return ele.id!==action.payload
             })
         }
+        case 'UPDATE_TITLE': {
+            return state.map((ele) => {
+                if (ele.id === action.payload.id) {
+                    return {...ele,title:action.payload.title}
+                } else {
+                    return ele
+                }
+            })
+        }
         default: {
             return [...state]
         }
